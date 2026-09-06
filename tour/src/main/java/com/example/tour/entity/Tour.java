@@ -2,6 +2,9 @@ package com.example.tour.entity;
 
 import com.example.tour.enums.Language;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 import lombok.Setter;
 
@@ -19,19 +22,24 @@ public class Tour {
     private Guide guide;
 
     @Column(nullable = false, columnDefinition = "TEXT")
+    @NotBlank
     private String title;
 
     @Column(nullable = false, columnDefinition = "TEXT")
+    @NotBlank
     private String description;
 
     @Column(nullable = false)
+    @Positive(message = "Длительность должна быть больше 0")
     private double duration;
 
     @Setter
     @Column(nullable = false)
+    @Min(value = 1, message = "Цена не может быть отрицательной")
     private int price;
 
     @Column(name="max_participants", nullable = false)
+    @Min(value = 1, message = "Должен быть минимум 1 участник")
     private int maxParticipants;
 
     @Column(name="start_location", columnDefinition = "TEXT")

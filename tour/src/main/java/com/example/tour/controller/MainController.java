@@ -9,6 +9,6 @@ public class MainController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("Title", "Управление экскурсиями");
-        return "index";
+        return "login";
     }
 }

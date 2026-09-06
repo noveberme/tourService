@@ -1,6 +1,7 @@
 package com.example.tour.service;
 
 import com.example.tour.entity.Guide;
+import com.example.tour.entity.User;
 import com.example.tour.repository.GuideRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,9 @@ public class GuideService {
 
     public void deleteGuide(Long id) {
         guideRepository.deleteById(id);
+    }
+
+    public Guide getGuideByUser(User user) {
+        return guideRepository.findByEmail(user.getEmail()).orElse(null);
     }
 }

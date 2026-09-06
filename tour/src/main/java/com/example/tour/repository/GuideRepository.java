@@ -9,11 +9,11 @@ import java.util.Optional;
 
 @Repository
 public interface GuideRepository extends JpaRepository<Guide, Long> {
-    Optional<Guide> findByEmail(String title);
-    Optional<Guide> findByNumberPhone(String numberPhone);
+    Optional<Guide> findByEmail(String email);
+    /*Optional<Guide> findByNumberPhone(String numberPhone);
 
     List<Guide> findByOrderByRatingDesc();
 
     boolean existsByEmail(String email);
-    boolean existsByNumberPhone(String numberPhone);
+    boolean existsByNumberPhone(String numberPhone);*/
 }
