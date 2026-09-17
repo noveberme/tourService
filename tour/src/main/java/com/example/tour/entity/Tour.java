@@ -25,14 +25,17 @@ public class Tour {
     private String description;
 
     @Column(nullable = false)
-    private double duration;
+    @Positive(message = "Длительность должна быть больше 0")
+    private Double duration;
 
     @Setter
     @Column(nullable = false)
-    private int price;
+    @Min(value = 1, message = "Цена не может быть отрицательной")
+    private Integer price;
 
     @Column(name="max_participants", nullable = false)
-    private int maxParticipants;
+    @Min(value = 1, message = "Должен быть минимум 1 участник")
+    private Integer maxParticipants;
 
     @Column(name="start_location", columnDefinition = "TEXT")
     private String startLocation;

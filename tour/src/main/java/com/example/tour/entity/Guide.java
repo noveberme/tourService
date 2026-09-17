@@ -19,7 +19,7 @@ public class Guide {
     private String bio;
 
     @Column()
-    private int rating;
+    private Integer rating;
 
     @Column(nullable = false)
     private String languages;
