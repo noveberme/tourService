@@ -15,7 +15,7 @@ public interface TourRepository extends JpaRepository<Tour, Long> {
     List<Tour> findByOrderByPriceAsc();//поиск по цене (по убыванию)
     List<Tour> findByOrderByPriceDesc();//поиск по цене по возрастанию*/
     List<Tour> findByTitleContainingIgnoreCase(String title);//поиск по названию (с учетом регистра)
-    List<Tour> findByPriceLessThanEqual(int price);//поиск дешевых (цена ниже среднего)
+    List<Tour> findByPriceLessThanEqual(Integer price);//поиск дешевых (цена ниже среднего)
     /*List<Tour> findByPriceBetween(int min, int max);
     List<Tour> findByTourLanguage(Language language);//поиск по языку тура*/
 }

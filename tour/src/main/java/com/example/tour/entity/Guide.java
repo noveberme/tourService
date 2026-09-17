@@ -24,7 +24,7 @@ public class Guide {
     @Min(value = 0, message = "Рейтинг не может быть меньше 0")
     @Max(value = 5, message = "Рейтинг не может превышать 5")
     @Column()
-    private int rating;
+    private Integer rating;
 
     @Column(nullable = false)
     private String languages;
